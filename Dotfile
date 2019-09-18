@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+Dotfile.configure do |config|
+    config.alias_host :devbox, :sean
+
+    config.link 'bashrc', to: '.bashrc',    except: [:devbox]
+    config.link 'bashrc', to: '.bash_extras', only: [:devbox]
+
+    config.link 'bash_completion.d', to: '.bash_completion.d'
+    config.link 'tmux.conf',         to: '.tmux.conf'
+    config.link 'inputrc',           to: '.inputrc'
+    config.link 'vimrc',             to: '.vimrc'
+    config.link 'vim',               to: '.vim'
+
+    config.link 'gitconfig',  to: '.gitconfig',  except: [:devbox]
+    config.link 'profile',    to: '.profile',      only: [:adder, :banshee, :devbox, :kali]
+    config.link 'kitty',      to: '.config/kitty', only: [:adder, :banshee, :kali]
+
+    config.link 'ssh/config',      to: '.ssh/config', only: [:adder]
+    config.link 'ssh/3dmc_config', to: '.ssh/config', only: [:banshee, :devbox]
+end

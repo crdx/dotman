@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/dotman'
+include Dotman
+
+class Main
+    DOTFILE = 'Dotfile'
+
+    def self.run(opts)
+        unless File.exist?(DOTFILE)
+            puts 'Dotfile not found'.red
+            exit 1
+        end
+
+        class << Dotfile
+            load DOTFILE
+        end
+
+        env = {
+            base: File.expand_path(opts['--base']),
+            home: File.expand_path(opts['--home'])
+        }
+
+        puts Dotfile.to_script(env)
+    end
+end
+
+docs = <<~EOF
+    Usage:
+        dotman [options] build
+
+    Options:
+        --base=BASE  Dir from where symlinks should be sourced [default: ~/.dotfiles/files]
+        --home=HOME  Dir where symlinks should be placed       [default: ~]
+EOF
+
+begin
+    opts = Docopt::docopt(docs)
+rescue Docopt::Exit => e
+    puts e.message
+    exit 1
+end
+
+Main.run(opts)
