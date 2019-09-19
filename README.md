@@ -32,7 +32,7 @@ Options:
 ## Usage
 
 
-A `Dotfile` is a lot like a `Vagrantfile`. It's pure Ruby, but via use of heavy DSL-like patterns it looks more like a configuration file, while still leveraging all the power of a full programming language.
+A `Dotfile` is a lot like a `Vagrantfile`. It's pure Ruby, but via use of DSL-like patterns it looks more like a configuration file, while still leveraging all the power of a full programming language.
 
 The `dotman build` command operates by reading the `Dotfile` in the current directory and processing it. It outputs to standard output a dependency-free Bash script which will install your dotfiles.
 
