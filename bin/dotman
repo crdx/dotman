@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 require_relative '../lib/dotman'
 include Dotman
 
@@ -26,19 +25,19 @@ class Main
 end
 
 docs = <<~EOF
-    Usage:
+    #{'Usage:'.bold}
         dotman [options] build
 
-    Options:
-        --base=BASE  Dir from where symlinks should be sourced [default: ~/.dotfiles/files]
-        --home=HOME  Dir where symlinks should be placed       [default: ~]
+    #{'Options:'.bold}
+        --base=BASE         Dir from where symlinks should be sourced [default: ~/.dotfiles/files]
+        --home=HOME         Dir where symlinks should be placed       [default: ~]
+        -v, --version       Show version
+        -h, --help          Show this help
 EOF
 
 begin
-    opts = Docopt::docopt(docs)
+    Main.run(Docopt::docopt(docs, version: VERSION))
 rescue Docopt::Exit => e
     puts e.message
     exit 1
 end
-
-Main.run(opts)

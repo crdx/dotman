@@ -1,5 +1,4 @@
 #!/bin/bash
 bundle exec rspec
-
 echo
 echo xdg-open coverage/index.html

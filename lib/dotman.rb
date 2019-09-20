@@ -1,13 +1,15 @@
-Dir.chdir __dir__ do
-    require 'bundler/setup'
-    require 'require_all'
-    require 'colorize'
-    require 'docopt'
+require 'require_all'
+require 'colorize'
+require 'docopt'
 
-    require 'shellwords'
-    require 'ostruct'
-    require 'socket'
+require 'shellwords'
+require 'ostruct'
+require 'socket'
+
+module Dotman
+    def self.root_dir
+        File.expand_path('../..', __FILE__)
+    end
 end
 
-module Dotman; end
 require_rel 'dotman'

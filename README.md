@@ -52,11 +52,9 @@ Dotfile.configure do |config|
     config.link 'bashrc', to: '.bashrc',    except: [:twain]
     config.link 'bashrc', to: '.bash_extras', only: [:twain]
 
-    config.link 'bash_completion.d', to: '.bash_completion.d'
-    config.link 'tmux.conf',         to: '.tmux.conf'
-    config.link 'inputrc',           to: '.inputrc'
-    config.link 'vimrc',             to: '.vimrc'
-    config.link 'vim',               to: '.vim'
+    %w[bash_completion.d tmux.conf inputrc vimrc vim].each do |entry|
+        config.link entry, to: '.' + entry
+    end
 
     config.link 'gitconfig',  to: '.gitconfig',  except: [:twain]
     config.link 'profile',    to: '.profile',      only: [:huck, :sawyer, :twain]
