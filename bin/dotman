@@ -16,8 +16,8 @@ class Main
         end
 
         env = {
-            base: File.expand_path(opts['--base']),
-            home: File.expand_path(opts['--home'])
+            base: opts['--base'],
+            home: opts['--home']
         }
 
         puts Dotfile.to_script(env)
@@ -29,8 +29,8 @@ docs = <<~EOF
         dotman [options] build
 
     #{'Options:'.bold}
-        --base=BASE         Dir from where symlinks should be sourced [default: ~/.dotfiles/files]
-        --home=HOME         Dir where symlinks should be placed       [default: ~]
+        --base=BASE         Dir from where symlinks should be sourced [default: $HOME/.dotfiles/files]
+        --home=HOME         Dir where symlinks should be placed       [default: $HOME]
         -v, --version       Show version
         -h, --help          Show this help
 EOF
