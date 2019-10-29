@@ -25,10 +25,17 @@ module Dotman::Action
         end
 
         def create_link
-            Shell.block([
+            block = [
                 Shell.command('ln -s "$BASE_DIR/%s" "$HOME_DIR/%s"' % pair),
                 Shell.echo(:yellow, 'Link $BASE_DIR/%s → $HOME_DIR/%s created' % pair),
-            ])
+            ]
+
+            dirname = File.dirname(pair[1])
+            if dirname != '.'
+                block.prepend Shell.command('mkdir --parents $HOME_DIR/%s' % dirname)
+            end
+
+            Shell.block(block)
         end
 
         def link_is_set_up
