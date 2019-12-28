@@ -3,27 +3,27 @@ BIN := 'bundle exec ruby -Ilib bin/dotman'
 _help:
     just --list
 
-# Build gem
+# build gem
 build:
     bundle exec rake build
 
-# Remove built gems
+# remove built gems
 clean:
     rm --force --verbose pkg/*
 
-# Build and install the gem globally to the system
+# build and install the gem globally to the system
 install:
     bundle exec rake install
 
-# Deploy the gem to rubygems.org
+# deploy the gem to rubygems.org
 release:
     bundle exec rake release
 
-# Run the gem's binary
+# run the gem's binary
 run +args:
     {{ BIN }} "{{ args }}"
 
-# Run tests
+# run tests
 test:
     bundle exec rspec
     @echo
