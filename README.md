@@ -101,7 +101,7 @@ This is all it takes to mass-deploy your dotfiles across any number of machines 
 
 Run tests with `tools/test`.
 
-Code coverage is output to `coverage/`, and stands at 100% for library code.
+Code coverage is output to `coverage/`, and stands at almost 100%.
 
 ## Development
 
