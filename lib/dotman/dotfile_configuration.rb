@@ -23,7 +23,7 @@ module Dotman
         end
 
         def satisfies_args(args)
-            Shell.satisfies_args(@host_aliases, args)
+            Shell.satisfies_args(@host_aliases, **args)
         end
 
         def actions
