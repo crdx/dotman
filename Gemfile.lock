@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dotman-bin (1.0.4)
+    dotman-bin (1.0.5)
       colorize (~> 0.8.1)
       docopt (~> 0.6.1)
       require_all (~> 2.0)

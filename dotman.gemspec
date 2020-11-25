@@ -2,7 +2,7 @@ require_relative 'lib/dotman/version'
 
 Gem::Specification.new do |spec|
     spec.homepage = 'https://github.com/crdx/dotman'
-    spec.summary  = 'Run many commands dotman with a colourful overview'
+    spec.summary  = 'Manage dotfiles'
     spec.name     = 'dotman-bin'
     spec.version  = Dotman::VERSION
     spec.author   = 'crdx'
