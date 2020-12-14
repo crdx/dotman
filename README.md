@@ -58,7 +58,7 @@ Dotfile.configure do |config|
 
     config.link 'gitconfig',  to: '.gitconfig',  except: [:twain]
     config.link 'profile',    to: '.profile',      only: [:huck, :sawyer, :twain]
-    config.link 'kitty',      to: '.config/kitty', only: [:huck, :sawyer
+    config.link 'kitty',      to: '.config/kitty', only: [:huck, :sawyer]
 
     config.link 'ssh/config', to: '.ssh/config', only: [:huck]
 end
@@ -99,15 +99,15 @@ This is all it takes to mass-deploy your dotfiles across any number of machines 
 
 ## Tests
 
-Run tests with `tools/test`.
+Run tests with `just test`.
 
 Code coverage is output to `coverage/`, and stands at almost 100%.
 
 ## Development
 
-Use `tools/install` to build and install locally for testing.
+Use `just install` to build and install locally for testing.
 
-Use `tools/publish` to release to rubygems.org.
+Use `just publish` to release to rubygems.org.
 
 ## Bugs or contributions
 
