@@ -1,7 +1,7 @@
 BIN := 'bundle exec ruby -Ilib bin/dotman'
 
 _help:
-    @just --list
+    @just --list --unsorted
 
 # build gem
 build:
