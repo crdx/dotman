@@ -1,13 +1,13 @@
 # dotman
 
-dotman is a dotfile manager for those who
+dotman is a dotfile manager for those who...
 
-- like to store their dotfiles in a git repository
-- like to deploy their dotfiles to many remote machines
-- like to be able to simply deploy a minimal-dependency shell script
-- don't want a dependency on automation tools and would rather deploy via ssh
-- don't want to have to write any significant amount of shell script if avoidable
-- enjoy configuring tools using ruby DSLs
+- like to store their dotfiles in a git repository.
+- like to deploy their dotfiles to many remote machines.
+- like to be able to simply deploy a minimal-dependency shell script.
+- don't want a dependency on automation tools and would rather deploy via ssh.
+- don't want to have to write any significant amount of shell script if avoidable.
+- enjoy configuring tools using ruby DSLs.
 
 ## Installation
 
@@ -57,9 +57,7 @@ Dotfile.configure do |config|
     end
 
     config.link 'gitconfig',  to: '.gitconfig',  except: [:twain]
-    config.link 'profile',    to: '.profile',      only: [:huck, :sawyer, :twain]
-    config.link 'kitty',      to: '.config/kitty', only: [:huck, :sawyer]
-
+    config.link 'profile',    to: '.profile',    only: [:huck, :sawyer, :twain]
     config.link 'ssh/config', to: '.ssh/config', only: [:huck]
 end
 ```
@@ -80,7 +78,7 @@ This `install` script can be run from anywhere. It does not necessarily have to 
 
 ## Deployment
 
-Deploying over ssh is incredibly simple.
+Deploying over ssh is simple.
 
 ```bash
 #!/bin/bash
@@ -88,7 +86,7 @@ set -e
 
 git push
 
-COMMAND='cd $HOME/.dotfiles && git pull && ./install'
+COMMAND='cd $HOME/.conf && git pull && ./install'
 
 for MACHINE in clemens finn sawyer; do
     ssh -t $MACHINE $COMMAND
