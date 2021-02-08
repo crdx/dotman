@@ -20,25 +20,23 @@ gem install dotman-bin
 The binary is called `dotman`.
 
 ## Command line interface
+
 ```
 Usage:
-    dotman [options] build
+    dotman [ --home=PATH ] --base=PATH build
 
 Options:
-        --base=BASE  Dir from where symlinks should be sourced [default: ~/.dotfiles/files]
-        --home=HOME  Dir where symlinks should be placed       [default: ~]
+    -b, --base=PATH    Directory from where configuration files should be sourced
+    --home=PATH        Directory where symlinks should be placed [default: $HOME]
 ```
 
 ## Usage
-
 
 A `Dotfile` is a lot like a `Vagrantfile`. It's pure Ruby, but via use of DSL-like patterns it looks more like a configuration file, while still leveraging all the power of a full programming language.
 
 The `dotman build` command operates by reading the `Dotfile` in the current directory and processing it. It outputs to standard output a dependency-free Bash script which will install your dotfiles.
 
 "Install", in this case, means to create a symlink from your *home* directory to the relevant files inside your *base* directory. This means that updating your dotfiles on a machine requires nothing more than a `git pull`.
-
-The default of `~/.dotfiles/files` for the base directory can be overridden with `--base`, and the default of `~` for the home directory can be overridden with `--home`.
 
 ## Example
 
@@ -66,15 +64,13 @@ The machine's hostname can be used as a conditional. The `only` and `except` opt
 
 It's also possible to create aliases to hostnames using `alias_host`, if the machine's name is unwelcome.
 
-Place this file in the root directory of the git repository where your dotfiles are stored. If happy with the defaults, ensure the relevant files are in the `files/` directory, otherwise specify a different one with `--base`.
+Place this file in the root directory of the git repository where your dotfiles are stored.
 
 The output of `dotman build` is a shell script. You probably want to redirect it into a file, perhaps called `install`.
 
 ```
-dotman build > install
+dotman build --base $HOME/.conf > install
 ```
-
-This `install` script can be run from anywhere. It does not necessarily have to be kept alongside the relevant `files/` directory, but it makes sense. The author checks it into their dotfiles repository and runs it as part of the post-`git clone` procedure, and recommends this approach.
 
 ## Deployment
 

@@ -26,13 +26,13 @@ end
 
 docs = <<~EOF
     #{'Usage:'.bold}
-        dotman [options] build
+        dotman [ --home=PATH ] --base=PATH build
 
     #{'Options:'.bold}
-        --base=BASE         Dir from where symlinks should be sourced [default: $HOME/.dotfiles/files]
-        --home=HOME         Dir where symlinks should be placed       [default: $HOME]
-        -v, --version       Show version
-        -h, --help          Show this help
+        -b, --base=PATH    Directory from where configuration files should be sourced
+        --home=PATH        Directory where symlinks should be placed [default: $HOME]
+        -v, --version      Show version
+        -h, --help         Show this help
 EOF
 
 begin
