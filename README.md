@@ -105,7 +105,7 @@ Use `just publish` to release to rubygems.org.
 
 ## Bugs or contributions
 
-Open an [issue](http://github.com/crdx/dotman/issues) or send a [pull request](http://github.com/crdx/dotman/pulls).
+Open an [issue](https://github.com/crdx/dotman/issues) or send a [pull request](https://github.com/crdx/dotman/pulls).
 
 ## Licence
 
