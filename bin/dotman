@@ -6,6 +6,11 @@ class Main
     DOTFILE = 'Dotfile'
 
     def self.run(opts)
+        if opts['--version']
+            puts VERSION
+            exit
+        end
+
         unless File.exist?(DOTFILE)
             puts 'Dotfile not found'.red
             exit 1
@@ -24,20 +29,21 @@ class Main
     end
 end
 
-docs = <<~EOF
-    #{'Usage:'.bold}
-        dotman [ --home=PATH ] --base=PATH build
+usage = <<~EOF
+    Usage:
+        dotman [--home PATH] --base PATH build
+        dotman ( --version | --help )
 
-    #{'Options:'.bold}
-        -b, --base=PATH    Directory from where configuration files should be sourced
-        --home=PATH        Directory where symlinks should be placed [default: $HOME]
+    Options:
+        -b, --base PATH    Directory from where configuration files should be sourced
+        --home PATH        Directory where symlinks should be placed [default: $HOME]
         -v, --version      Show version
         -h, --help         Show this help
 EOF
 
 begin
-    Main.run(Docopt::docopt(docs, version: VERSION))
+    Main.run(Docopt::docopt(usage))
 rescue Docopt::Exit => e
-    puts e.message
+    puts usage
     exit 1
 end

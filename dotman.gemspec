@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
     spec.author   = 'crdx'
     spec.license  = 'MIT'
 
-    spec.files    = Dir['{lib}/**/*']
+    spec.files    = Dir['lib/**/*']
     spec.executables = ['dotman']
 
     spec.add_runtime_dependency 'require_all', '~> 3.0'
