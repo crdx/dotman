@@ -45,5 +45,5 @@ begin
     Main.run(Docopt::docopt(usage))
 rescue Docopt::Exit => e
     puts usage
-    exit 1
+    exit 2
 end
