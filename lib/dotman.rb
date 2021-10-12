@@ -8,7 +8,7 @@ require 'socket'
 
 module Dotman
     def self.root_dir
-        File.expand_path('../..', __FILE__)
+        File.expand_path('..', __dir__)
     end
 end
 

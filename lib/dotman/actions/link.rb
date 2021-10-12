@@ -1,7 +1,8 @@
 module Dotman::Action
     class Link
         def initialize(from, to)
-            @from, @to = from, to
+            @from = from
+            @to = to
         end
 
         def to_statement
@@ -10,7 +11,8 @@ module Dotman::Action
 
         private
 
-        attr_reader :from, :to
+        attr_reader :from
+        attr_reader :to
 
         def pair
             [from, to]
@@ -32,7 +34,7 @@ module Dotman::Action
 
             dirname = File.dirname(pair[1])
             if dirname != '.'
-                block.prepend Shell.command('mkdir --parents $HOME_DIR/%s' % dirname)
+                block.prepend(Shell.command('mkdir --parents $HOME_DIR/%s' % dirname))
             end
 
             Shell.block(block)

@@ -1,0 +1,165 @@
+AllCops:
+  TargetRubyVersion: 3
+  NewCops: enable
+
+########################################################################
+# Disabled
+########################################################################
+
+Style/MixinUsage:
+  Enabled: no
+Style/FormatString:
+  Enabled: no
+Style/FormatStringToken:
+  Enabled: no
+Style/SpecialGlobalVars:
+  Enabled: no
+Style/StringConcatenation:
+  Enabled: no
+Style/IfUnlessModifier:
+  Enabled: no
+Style/RedundantReturn:
+  Enabled: no
+Style/FrozenStringLiteralComment:
+  Enabled: no
+Style/NegatedIf:
+  Enabled: no
+Style/NegatedWhile:
+  Enabled: no
+Style/Documentation:
+  Enabled: no
+Style/MultilineBlockChain:
+  Enabled: no
+Style/PerlBackrefs:
+  Enabled: no
+Style/StderrPuts:
+  Enabled: no
+Style/ClassAndModuleChildren:
+  Enabled: no
+Style/ZeroLengthPredicate:
+  Enabled: no
+Style/GuardClause:
+  Enabled: no
+Style/WhileUntilModifier:
+  Enabled: no
+Style/MutableConstant:
+  Enabled: no
+Style/ClassVars:
+  Enabled: no
+
+Metrics/AbcSize:
+  Enabled: no
+Metrics/PerceivedComplexity:
+  Enabled: no
+Metrics/CyclomaticComplexity:
+  Enabled: no
+
+Naming/HeredocDelimiterNaming:
+  Enabled: no
+Naming/AccessorMethodName:
+  Enabled: no
+Naming/MethodParameterName:
+  Enabled: no
+
+Lint/AmbiguousOperatorPrecedence:
+  Enabled: no
+
+########################################################################
+# Configured
+########################################################################
+
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+
+Style/NumericPredicate:
+  EnforcedStyle: comparison
+
+Style/Semicolon:
+  AllowAsExpressionSeparator: yes
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: yes
+  IgnoreMacros: false # Top-level calls will not be included otherwise.
+  IgnoredMethods:
+    - puts
+    - print
+    - println
+    - raise
+    - pp
+    - require
+    - require_relative
+    - require_all
+    - require_rel
+    - yield
+    - exit
+    - attr_reader
+    - attr_accessor
+    - include
+    - add_runtime_dependency
+    - add_development_dependency
+    - gem
+    - source
+
+Style/RescueModifier:
+  Enabled: no
+
+Style/RescueStandardError:
+  EnforcedStyle: implicit
+
+Style/ConditionalAssignment:
+  EnforcedStyle: assign_inside_condition
+  IncludeTernaryExpressions: false
+
+Style/AccessorGrouping:
+  EnforcedStyle: separated
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: '[]'
+    '%r': '[]'
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/IndentationWidth:
+  Width: 4
+
+Layout/SpaceAroundOperators:
+  EnforcedStyleForExponentOperator: space
+
+Layout/LineLength:
+  Max: 100
+  AutoCorrect: yes
+
+Metrics/ClassLength:
+  Max: 100
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+
+Metrics/MethodLength:
+  Max: 35
+  CountAsOne:
+    - array
+    - hash
+    - heredoc
+
+Metrics/BlockLength:
+  Max: 30
+  CountAsOne:
+    - array
+    - hash
+    - heredoc

@@ -1,11 +1,12 @@
 module Dotman
     class DotfileConfiguration
         def initialize
-            @actions, @host_aliases = [], {}
+            @actions = []
+            @host_aliases = {}
         end
 
         def link(from, to: nil, **args)
-            add_action Action::Link.new(from, to), args
+            add_action(Action::Link.new(from, to), args)
         end
 
         def to_script(env)

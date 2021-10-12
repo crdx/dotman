@@ -1,7 +1,9 @@
 module Dotman::Check
     class Host
         def initialize(aliases, hosts, include: true)
-            @aliases, @hosts, @include = aliases, hosts, include
+            @aliases = aliases
+            @hosts = hosts
+            @include = include
         end
 
         def to_comparison
@@ -11,11 +13,11 @@ module Dotman::Check
         private
 
         def condition_operator
-            if @include then :or else :and end
+            @include ? :or : :and
         end
 
         def comparison_operator
-            if @include then '=' else '!=' end
+            @include ? '=' : '!='
         end
 
         def compare(host)

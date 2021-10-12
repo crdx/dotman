@@ -4,7 +4,7 @@ describe Dotman::DotfileConfiguration do
     end
 
     let (:env) do
-        { base: "my_base_dir", "home": "my_home_dir" }
+        { base: 'my_base_dir', home: 'my_home_dir' }
     end
 
     it 'symlinks' do
@@ -20,10 +20,10 @@ describe Dotman::DotfileConfiguration do
     end
 
     it 'symlink includes specific hosts' do
-        @config.link 'rc', to: '.rc', only: [:host1, :host2]
+        @config.link 'rc', to: '.rc', only: %i[host_1 host_2]
         expect(@config.to_script(env)).to include('ln -s')
-        expect(@config.to_script(env)).to include('host1')
-        expect(@config.to_script(env)).to include('host2')
+        expect(@config.to_script(env)).to include('host_1')
+        expect(@config.to_script(env)).to include('host_2')
         expect(@config.to_script(env)).to include('=')
     end
 
@@ -35,10 +35,10 @@ describe Dotman::DotfileConfiguration do
     end
 
     it 'symlink excludes specific hosts' do
-        @config.link 'rc', to: '.rc', except: [:host1, :host2]
+        @config.link 'rc', to: '.rc', except: %i[host_1 host_2]
         expect(@config.to_script(env)).to include('ln -s')
-        expect(@config.to_script(env)).to include('host1')
-        expect(@config.to_script(env)).to include('host2')
+        expect(@config.to_script(env)).to include('host_1')
+        expect(@config.to_script(env)).to include('host_2')
         expect(@config.to_script(env)).to include('!=')
     end
 
@@ -48,8 +48,8 @@ describe Dotman::DotfileConfiguration do
     end
 
     it 'aliases hosts correctly' do
-        @config.alias_host :host1, :host2
-        @config.link 'rc', to: '.rc', except: [:host1]
-        expect(@config.to_script(env)).to include('host2')
+        @config.alias_host :host_1, :host_2
+        @config.link 'rc', to: '.rc', except: [:host_1]
+        expect(@config.to_script(env)).to include('host_2')
     end
 end

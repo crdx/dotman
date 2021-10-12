@@ -1,6 +1,6 @@
 describe Dotman::Dotfile do
     let (:env) do
-        { base: "my_base_dir", "home": "my_home_dir" }
+        { base: 'my_base_dir', home: 'my_home_dir' }
     end
 
     it 'works' do

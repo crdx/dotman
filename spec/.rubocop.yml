@@ -1,0 +1,10 @@
+inherit_from: ../.rubocop.yml
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: no
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: no
+Layout/LineLength:
+  Enabled: no
+Metrics/BlockLength:
+  Enabled: no

@@ -17,12 +17,12 @@ class Main
         end
 
         class << Dotfile
-            load DOTFILE
+            load(DOTFILE)
         end
 
         env = {
             base: opts['--base'],
-            home: opts['--home']
+            home: opts['--home'],
         }
 
         puts Dotfile.to_script(env)
@@ -42,8 +42,8 @@ usage = <<~EOF
 EOF
 
 begin
-    Main.run(Docopt::docopt(usage))
-rescue Docopt::Exit => e
+    Main.run(Docopt.docopt(usage))
+rescue Docopt::Exit
     puts usage
     exit 2
 end

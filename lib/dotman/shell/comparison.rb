@@ -1,14 +1,16 @@
 module Dotman::Shell
     class Comparison
-        def initialize(operand1, operator, operand2 = nil)
-            @operand1, @operator, @operand2 = operand1, operator, operand2
+        def initialize(operand_1, operator, operand_2 = nil)
+            @operand_1 = operand_1
+            @operator = operator
+            @operand_2 = operand_2
         end
 
         def to_s
-            if @operand2.nil?
-                '[ %s "%s" ]' % [@operator, @operand1]
+            if @operand_2.nil?
+                '[ %s "%s" ]' % [@operator, @operand_1]
             else
-                '[ "%s" %s "%s" ]' % [ @operand1, @operator, @operand2 ]
+                '[ "%s" %s "%s" ]' % [@operand_1, @operator, @operand_2]
             end
         end
     end

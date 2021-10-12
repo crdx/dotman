@@ -1,6 +1,7 @@
 describe Dotman::Shell::Statement do
     it 'handles a logical statement' do
-        b, c = double, double
+        b = double
+        c = double
         expect(b).to receive(:to_s).with(1).and_return('b')
         expect(c).to receive(:to_s).with(1).and_return('c')
         statement = described_class.new('a', b, c)

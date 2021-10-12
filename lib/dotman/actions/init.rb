@@ -20,10 +20,12 @@ module Dotman::Action
 
         def die
             Shell.block([
-                Shell.echo(:red, 'One or more core environment variables is missing; cannot continue.'),
-                Shell.exit(1)
+                Shell.echo(
+                    :red,
+                    'One or more core environment variables is missing; cannot continue.',
+                ),
+                Shell.exit(1),
             ])
         end
-
     end
 end

@@ -26,4 +26,3 @@ module Dotman::Shell
         end
     end
 end
-

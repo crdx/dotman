@@ -28,3 +28,7 @@ test:
     bundle exec rspec
     @echo
     @echo xdg-open coverage/index.html
+
+# run linter
+lint:
+    rubocop
