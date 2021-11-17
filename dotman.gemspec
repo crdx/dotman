@@ -7,11 +7,12 @@ Gem::Specification.new do |spec|
     spec.version = Dotman::VERSION
     spec.author = 'crdx'
     spec.license = 'MIT'
+    spec.metadata['rubygems_mfa_required'] = 'true'
+
+    spec.required_ruby_version = '>= 3.0'
 
     spec.files = Dir['lib/**/*']
     spec.executables = ['dotman']
-
-    spec.required_ruby_version = '>= 3.0'
 
     spec.add_runtime_dependency 'colorize', '~> 0.8.1'
     spec.add_runtime_dependency 'docopt', '~> 0.6.1'
