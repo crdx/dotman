@@ -12,8 +12,6 @@ Style/FormatString:
   Enabled: no
 Style/FormatStringToken:
   Enabled: no
-Style/SpecialGlobalVars:
-  Enabled: no
 Style/StringConcatenation:
   Enabled: no
 Style/IfUnlessModifier:
