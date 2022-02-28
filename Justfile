@@ -32,3 +32,7 @@ test:
 # run linter
 lint:
     rubocop
+
+# fix lint errors
+fix:
+    rubocop -a
