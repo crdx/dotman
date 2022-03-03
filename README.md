@@ -103,7 +103,7 @@ Use `just install` to build and install locally for testing.
 
 Use `just publish` to release to rubygems.org.
 
-## Bugs or contributions
+## Contributions
 
 Open an [issue](https://github.com/crdx/dotman/issues) or send a [pull request](https://github.com/crdx/dotman/pulls).
 
