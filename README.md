@@ -1,6 +1,6 @@
 # dotman
 
-dotman is a dotfile manager for those who...
+**dotman** is a dotfile manager for those who...
 
 - like to store their dotfiles in a git repository.
 - like to deploy their dotfiles to many remote machines.
