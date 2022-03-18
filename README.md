@@ -19,7 +19,7 @@ gem install dotman-bin
 
 The binary is called `dotman`.
 
-## Command line interface
+## CLI
 
 ```
 Usage:
