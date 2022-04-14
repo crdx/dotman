@@ -23,11 +23,14 @@ The binary is called `dotman`.
 
 ```
 Usage:
-    dotman [ --home=PATH ] --base=PATH build
+    dotman [--home PATH] --base PATH build
+    dotman ( --version | --help )
 
 Options:
-    -b, --base=PATH    Directory from where configuration files should be sourced
-    --home=PATH        Directory where symlinks should be placed [default: $HOME]
+    -b, --base PATH    Directory from where configuration files should be sourced
+    --home PATH        Directory where symlinks should be placed [default: $HOME]
+    -v, --version      Show version
+    -h, --help         Show this help
 ```
 
 ## Usage
