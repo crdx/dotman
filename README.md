@@ -30,7 +30,7 @@ Options:
     -b, --base PATH    Directory from where configuration files should be sourced
     --home PATH        Directory where symlinks should be placed [default: $HOME]
     -v, --version      Show version
-    -h, --help         Show this help
+    -h, --help         Show help
 ```
 
 ## Usage
