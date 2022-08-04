@@ -78,7 +78,7 @@ Style/Semicolon:
 Style/MethodCallWithArgsParentheses:
   Enabled: yes
   IgnoreMacros: false # Top-level calls will not be included otherwise.
-  IgnoredMethods:
+  AllowedMethods:
     - puts
     - print
     - println
