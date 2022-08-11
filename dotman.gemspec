@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
     spec.name = 'dotman-bin'
     spec.version = Dotman::VERSION
     spec.author = 'crdx'
-    spec.license = 'MIT'
+    spec.license = 'GPLv3'
     spec.metadata['rubygems_mfa_required'] = 'true'
 
     spec.required_ruby_version = '>= 3.0'
