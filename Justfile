@@ -9,7 +9,7 @@ build:
 
 # remove built gems
 clean:
-    rm --force --verbose pkg/*
+    rm -vf pkg/*
 
 # build and install the gem globally to the system
 install:
