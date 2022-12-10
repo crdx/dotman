@@ -98,13 +98,11 @@ This is all it takes to mass-deploy your dotfiles across any number of machines 
 
 Run tests with `just test`.
 
-Code coverage is output to `coverage/`, and stands at almost 100%.
+Code coverage is output to `coverage/`.
 
 ## Development
 
 Use `just install` to build and install locally for testing.
-
-Use `just publish` to release to rubygems.org.
 
 ## Contributions
 
