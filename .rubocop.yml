@@ -59,6 +59,9 @@ Naming/AccessorMethodName:
 Naming/MethodParameterName:
   Enabled: no
 
+Layout/LineLength:
+  Enabled: false
+
 Lint/AmbiguousOperatorPrecedence:
   Enabled: no
 
@@ -136,28 +139,3 @@ Layout/IndentationWidth:
 
 Layout/SpaceAroundOperators:
   EnforcedStyleForExponentOperator: space
-
-Layout/LineLength:
-  Max: 100
-  AutoCorrect: yes
-
-Metrics/ClassLength:
-  Max: 100
-  CountAsOne:
-    - array
-    - hash
-    - heredoc
-
-Metrics/MethodLength:
-  Max: 35
-  CountAsOne:
-    - array
-    - hash
-    - heredoc
-
-Metrics/BlockLength:
-  Max: 30
-  CountAsOne:
-    - array
-    - hash
-    - heredoc
