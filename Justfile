@@ -1,5 +1,7 @@
 BIN := 'bundle exec ruby -Ilib bin/dotman'
 
+import? 'internal.just'
+
 [private]
 @help:
     just --list --unsorted
@@ -15,10 +17,6 @@ clean:
 # build and install the gem globally to the system
 install:
     bundle exec rake install
-
-# deploy the gem to rubygems.org
-release:
-    bundle exec rake release
 
 # run the gem's binary
 run +args:
