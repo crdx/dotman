@@ -1,9 +1,11 @@
+set quiet
+
 BIN := 'bundle exec ruby -Ilib bin/dotman'
 
 import? 'internal.just'
 
 [private]
-@help:
+help:
     just --list --unsorted
 
 # build gem
@@ -25,8 +27,8 @@ run +args:
 # run tests
 test:
     bundle exec rspec
-    @echo
-    @echo xdg-open coverage/index.html
+    echo
+    echo o coverage/index.html
 
 # run linter
 lint:
