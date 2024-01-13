@@ -22,7 +22,7 @@ install:
 
 # run the gem's binary
 run +args:
-    {{ BIN }} "{{ args }}"
+    {{ BIN }} {{ args }}
 
 # run tests
 test:
