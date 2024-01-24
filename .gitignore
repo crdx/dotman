@@ -1,4 +1,5 @@
 /coverage/
 /pkg/
-# sfe: ignore next
+
+# sfe: ignore rest
 internal.just
