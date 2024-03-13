@@ -1,4 +1,4 @@
-set quiet
+set quiet := true
 
 BIN := 'bundle exec ruby -Ilib bin/dotman'
 
