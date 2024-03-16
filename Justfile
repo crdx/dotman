@@ -8,32 +8,31 @@ import? 'internal.just'
 help:
     just --list --unsorted
 
-# build gem
-build:
-    bundle exec rake build
+init:
+    bundle install
 
-# remove built gems
-clean:
-    rm -vf pkg/*
-
-# build and install the gem globally to the system
-install:
-    bundle exec rake install
-
-# run the gem's binary
 run +args:
     {{ BIN }} {{ args }}
 
-# run tests
 test:
     bundle exec rspec
     echo
     echo o coverage/index.html
 
-# run linter
+fmt:
+    just --fmt
+
 lint:
     rubocop
 
-# fix lint errors
 fix:
-    rubocop -a
+    rubocop -A
+
+build:
+    bundle exec rake build
+
+install:
+    bundle exec rake install
+
+clean:
+    rm -vf pkg/*

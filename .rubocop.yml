@@ -7,63 +7,69 @@ AllCops:
 # ——————————————————————————————————————————————————————————————————————————————————————————————————
 
 Style/MixinUsage:
-  Enabled: no
+  Enabled: false
 Style/FormatString:
-  Enabled: no
+  Enabled: false
 Style/FormatStringToken:
-  Enabled: no
+  Enabled: false
 Style/StringConcatenation:
-  Enabled: no
+  Enabled: false
 Style/IfUnlessModifier:
-  Enabled: no
+  Enabled: false
 Style/RedundantReturn:
-  Enabled: no
+  Enabled: false
 Style/FrozenStringLiteralComment:
-  Enabled: no
+  Enabled: false
 Style/NegatedIf:
-  Enabled: no
+  Enabled: false
 Style/NegatedWhile:
-  Enabled: no
+  Enabled: false
 Style/Documentation:
-  Enabled: no
+  Enabled: false
 Style/MultilineBlockChain:
-  Enabled: no
+  Enabled: false
 Style/PerlBackrefs:
-  Enabled: no
+  Enabled: false
 Style/StderrPuts:
-  Enabled: no
+  Enabled: false
 Style/ClassAndModuleChildren:
-  Enabled: no
+  Enabled: false
 Style/ZeroLengthPredicate:
-  Enabled: no
+  Enabled: false
 Style/GuardClause:
-  Enabled: no
+  Enabled: false
 Style/WhileUntilModifier:
-  Enabled: no
+  Enabled: false
 Style/MutableConstant:
-  Enabled: no
+  Enabled: false
 Style/ClassVars:
-  Enabled: no
+  Enabled: false
 
 Metrics/AbcSize:
-  Enabled: no
+  Enabled: false
 Metrics/PerceivedComplexity:
-  Enabled: no
+  Enabled: false
 Metrics/CyclomaticComplexity:
-  Enabled: no
+  Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
+Metrics/ClassLength:
+  Enabled: false
 
 Naming/HeredocDelimiterNaming:
-  Enabled: no
+  Enabled: false
 Naming/AccessorMethodName:
-  Enabled: no
+  Enabled: false
 Naming/MethodParameterName:
-  Enabled: no
+  Enabled: false
 
 Layout/LineLength:
   Enabled: false
 
 Lint/AmbiguousOperatorPrecedence:
-  Enabled: no
+  Enabled: false
 
 # ——————————————————————————————————————————————————————————————————————————————————————————————————
 # Configured
@@ -79,7 +85,7 @@ Style/Semicolon:
   AllowAsExpressionSeparator: yes
 
 Style/MethodCallWithArgsParentheses:
-  Enabled: yes
+  Enabled: true
   IgnoreMacros: false # Top-level calls will not be included otherwise.
   AllowedMethods:
     - puts
@@ -102,7 +108,7 @@ Style/MethodCallWithArgsParentheses:
     - source
 
 Style/RescueModifier:
-  Enabled: no
+  Enabled: false
 
 Style/RescueStandardError:
   EnforcedStyle: implicit
@@ -139,3 +145,6 @@ Layout/IndentationWidth:
 
 Layout/SpaceAroundOperators:
   EnforcedStyleForExponentOperator: space
+
+Gemspec/DevelopmentDependencies:
+  EnforcedStyle: gemspec

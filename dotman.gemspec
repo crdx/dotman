@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
 
     spec.add_runtime_dependency 'colorize', '~> 0.8.1'
     spec.add_runtime_dependency 'docopt', '~> 0.6.1'
+    spec.add_runtime_dependency 'json', '~> 2.7'
     spec.add_runtime_dependency 'require_all', '~> 3.0'
 
     spec.add_development_dependency 'rake', '~> 13.0'
