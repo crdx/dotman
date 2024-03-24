@@ -1,0 +1,7 @@
+#!/bin/bash
+set -euo pipefail
+
+sed -i "s/VERSION = .*/VERSION = '$1'/" lib/*/version.rb
+bundle install
+git add lib/*/version.rb Gemfile.lock
+git commit -m "Release v$1"
