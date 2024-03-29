@@ -1,0 +1,40 @@
+name: Deploy
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions: write-all
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Get version
+        run: |
+          git fetch --unshallow
+          git fetch origin --tags --force
+          OLD_VERSION=$(git describe --tags --abbrev=0 --match "v*" ${{ github.ref }}^)
+          echo "OLD_VERSION=$OLD_VERSION" >> $GITHUB_ENV
+
+      - name: Find commits since previous version
+        run: |
+          {
+            echo 'MESSAGES<<EOF'
+            git --no-pager log ${{ env.OLD_VERSION }}..${{ github.ref }} --pretty=format:"- %s" --reverse
+            echo
+            echo EOF
+          } >> "$GITHUB_ENV"
+
+      - name: Create draft release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          body: ${{ env.MESSAGES }}
+          draft: true
