@@ -2,4 +2,4 @@
 /pkg/
 
 # sfe: ignore rest
-internal.just
+local.just

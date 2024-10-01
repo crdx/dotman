@@ -2,7 +2,7 @@ set quiet := true
 
 BIN := 'bundle exec ruby -Ilib bin/dotman'
 
-import? 'internal.just'
+import? 'local.just'
 
 [private]
 help:
