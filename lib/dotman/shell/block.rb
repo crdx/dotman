@@ -5,7 +5,7 @@ module Dotman::Shell
         end
 
         def to_s(level = 0)
-            @commands.map { |command| command.to_s(level) }.join("\n")
+            @commands.map { _1.to_s(level) }.join("\n")
         end
     end
 end

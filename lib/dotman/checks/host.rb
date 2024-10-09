@@ -7,7 +7,7 @@ module Dotman::Check
         end
 
         def to_comparison
-            Shell.condition(hosts.map { |host| compare(host) }, condition_operator)
+            Shell.condition(hosts.map { compare(_1) }, condition_operator)
         end
 
         private
@@ -25,7 +25,7 @@ module Dotman::Check
         end
 
         def hosts
-            @hosts.map { |host| get_alias(host) }
+            @hosts.map { get_alias(_1) }
         end
 
         def get_alias(target)
