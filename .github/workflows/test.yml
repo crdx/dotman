@@ -10,7 +10,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Set up ruby
-      uses: ruby/setup-ruby@v1
+      uses: ruby/setup-ruby@401c19e14f474b54450cd3905bb8b86e2c8509cf
       with:
         ruby-version: 3.0
 
