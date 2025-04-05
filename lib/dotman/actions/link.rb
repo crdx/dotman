@@ -22,7 +22,7 @@ module Dotman::Action
             Shell.statement(link_is_set_up, link_set_up, link_not_set_up)
         end
 
-        def does_not_exist
+        def does_not_exist # rubocop:disable Naming/PredicateName
             Shell.comparison('$HOME_DIR/' + to, '! -e')
         end
 
