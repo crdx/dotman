@@ -96,8 +96,6 @@ Style/MethodCallWithArgsParentheses:
     - pp
     - require
     - require_relative
-    - require_all
-    - require_rel
     - yield
     - exit
     - attr_reader
