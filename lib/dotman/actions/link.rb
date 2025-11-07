@@ -6,7 +6,7 @@ module Dotman::Action
         end
 
         def to_statement
-            Shell.statement(does_not_exist, create_link, check_link)
+            Shell.statement(not_exist?, create_link, check_link)
         end
 
         private
@@ -22,7 +22,7 @@ module Dotman::Action
             Shell.statement(link_is_set_up, link_set_up, link_not_set_up)
         end
 
-        def does_not_exist
+        def not_exist?
             Shell.comparison('$HOME_DIR/' + to, '! -e')
         end
 
