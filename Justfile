@@ -1,4 +1,5 @@
 set quiet := true
+set shell := ["bash", "-cu", "-o", "pipefail"]
 
 BIN := 'bundle exec ruby -Ilib bin/dotman'
 
@@ -20,8 +21,7 @@ test:
     echo o coverage/index.html
 
 fmt:
-    just --fmt
-    find . -name '*.just' -print0 | xargs -0 -I{} just --fmt -f {}
+    echo 'Nothing to format'
 
 lint:
     rubocop
