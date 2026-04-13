@@ -28,7 +28,7 @@ module Dotman
         end
 
         def actions
-            actions_list.map(&:to_s).join("\n\n").strip
+            actions_list.join("\n\n").strip
         end
 
         def actions_list
