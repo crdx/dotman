@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
+NEW_VERSION="$1"
+
+just release::push "v${NEW_VERSION}"
 bundle exec rake release
-git push
-git push --tags

@@ -1,3 +1,5 @@
+mod release
+
 set quiet := true
 set shell := ["bash", "-cu", "-o", "pipefail"]
 
