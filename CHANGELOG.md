@@ -1,5 +1,7 @@
 # Changelog
 
+## [Next]
+
 ## [2.2.1] - 2024-03-29
 
 - Internal tweaks.
