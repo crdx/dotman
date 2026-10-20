@@ -1,0 +1,36 @@
+name: release
+
+on:
+    push:
+        tags:
+            - "v*"
+
+permissions:
+    contents: write
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+            - name: Install just
+              run: curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --tag 1.58.0 --to /usr/local/bin
+
+            - name: Extract changelog
+              id: changelog
+              run: |
+                  BODY=$(just release::notes "${GITHUB_REF_NAME}")
+                  {
+                      echo "body<<EOF"
+                      echo "$BODY"
+                      echo "EOF"
+                  } >> "$GITHUB_OUTPUT"
+
+            - name: Create release
+              run: |
+                  TAG="${GITHUB_REF#refs/tags/}"
+                  gh release create "$TAG" --title "$TAG" --notes "$BODY" --latest
+              env:
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  BODY: ${{ steps.changelog.outputs.body }}
